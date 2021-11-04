@@ -7,7 +7,7 @@ const autoprefixer = require('gulp-autoprefixer')
 const rename = require("gulp-rename")
 
 module.exports = function styles() {
-  return gulp.src('src/styles/style.scss')
+  return gulp.src('src/modules/**/*.scss')
     .pipe(plumber())
     .pipe(sass())
     .pipe(autoprefixer({
@@ -22,6 +22,6 @@ module.exports = function styles() {
     }))
   
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('build/css'))
+    .pipe(gulp.dest('build'))
 }
 
